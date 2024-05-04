@@ -29,7 +29,7 @@ The Course Planning Assistant feature assists students in planning their academi
 One of the important features tailored for faculty members within our Student Management System is the Grade Upload and Management functionality. This feature empowers faculty with a streamlined and efficient process for recording and managing student grades, fostering a transparent and organized approach to academic assessment.
 
 
-Installation:
+## Installation:
 
 For Client:
 
@@ -45,7 +45,7 @@ To run the Client:
 
 Go to client directory: cd client
 
-1. run envoy : envoy --config-path /src/enoy.yaml - Keep it running
+1. run envoy : envoy --config-path /src/envoy.yaml - Keep it running
 
 2. run client: npm start
 
@@ -89,12 +89,10 @@ User Story
 
 Tech Stack:
 
-Front End: React ts Redux node, express
+Front End: React ts Redux node express
 
 Backend: Python MongoDB
 
-
-10/10: Project ideation
 
 
 
