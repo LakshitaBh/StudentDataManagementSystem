@@ -3,3 +3,4 @@ credentials.yml
 _pycache_/
 *.py[cod]
 node_modules/
+.DS_Store
