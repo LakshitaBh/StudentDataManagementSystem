@@ -9,8 +9,8 @@
    args: [
     'build', 
     '-t', '${_EDUHUB_REPO_LOC}/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_BACKEND_IMG}', 
-    '-f', 'Dockerfile',
-    './${_EDUHUB_BACKEND_PATH}']
+    '-f', '${_EDUHUB_BACKEND_PATH}/Dockerfile',
+    '${_EDUHUB_BACKEND_PATH}']
 
  # Push the container image to Artifact Registry
  - name: 'gcr.io/cloud-builders/docker'
@@ -30,6 +30,7 @@
     _EDUHUB_BACKEND_IMG: eduhub-sand-backend-image:sandpit
     _EDUHUB_CLOUD_RUN_SERVICE: eduhub-sdms-backend
     _EDUHUB_REPO_LOC: us-central1-docker.pkg.dev
+    _EDUHUB_BACKEND_PATH: StudentDataManagementSystem/back-end
 
  options:
   logging: CLOUD_LOGGING_ONLY

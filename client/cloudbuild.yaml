@@ -9,7 +9,7 @@
    args: [
     'build', 
     '-t', '${_EDUHUB_REPO_LOC}/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_FRONTEND_IMG}', 
-    '-f', 'Dockerfile',
+    '-f', '${_EDUHUB_FRONTEND_PATH}/Dockerfile',
     '.']
 
  # Push the container image to Artifact Registry
@@ -30,6 +30,7 @@
     _EDUHUB_FRONTEND_IMG: eduhub-sand-frontend-image:sandpit
     _EDUHUB_CLOUD_RUN_SERVICE: eduhub-sdms-frontend
     _EDUHUB_REPO_LOC: us-central1-docker.pkg.dev
+    _EDUHUB_FRONTEND_PATH: StudentDataManagementSystem/client
 
  options:
   logging: CLOUD_LOGGING_ONLY
