@@ -8,20 +8,20 @@
  - name: 'gcr.io/cloud-builders/docker'
    args: [
     'build', 
-    '-t', 'us-east1-docker.pkg.dev/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_FRONTEND_IMG}', 
+    '-t', '${_EDUHUB_REPO_LOC}/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_FRONTEND_IMG}', 
     '-f', 'dockerfile',
     '.']
 
  # Push the container image to Artifact Registry
  - name: 'gcr.io/cloud-builders/docker'
-   args: ['push', 'us-east1-docker.pkg.dev/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_FRONTEND_IMG}']
+   args: ['push', '${_EDUHUB_REPO_LOC}/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_FRONTEND_IMG}']
  
  # Deploy container to Cloud Run
  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
    entrypoint: gcloud
    args: [
    'run', 'deploy', '${_EDUHUB_CLOUD_RUN_SERVICE}',
-   '--image', 'us-east1-docker.pkg.dev/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_FRONTEND_IMG}',
+   '--image', '${_EDUHUB_REPO_LOC}/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_FRONTEND_IMG}',
    '--region', 'us-east1',
    '--allow-unauthenticated']
 
@@ -29,4 +29,5 @@
     _EDUHUB_REPO: eduhub-sdms-repo
     _EDUHUB_FRONTEND_IMG: eduhub-sand-frontend-image:sandpit
     _EDUHUB_CLOUD_RUN_SERVICE: eduhub-sdms-frontend
+    _EDUHUB_REPO_LOC: us-south1-docker.pkg.dev
 

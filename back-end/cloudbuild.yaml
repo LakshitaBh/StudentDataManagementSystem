@@ -3,25 +3,25 @@
  steps:
  # Cloud Build runs the code inside a docker container
  # This is a supported pre-built cloud builder image for docker - stored in Artifact Registry/Google Container Registry - gcr
- 
+
  # Build the container image
  - name: 'gcr.io/cloud-builders/docker'
    args: [
     'build', 
-    '-t', 'us-east1-docker.pkg.dev/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_BACKEND_IMG}', 
+    '-t', '${_EDUHUB_REPO_LOC}/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_BACKEND_IMG}', 
     '-f', './${_EDUHUB_BACKEND_DOCKERFILE_PATH}/dockerfile',
     './${_EDUHUB_BACKEND_PATH}']
 
  # Push the container image to Artifact Registry
  - name: 'gcr.io/cloud-builders/docker'
-   args: ['push', 'us-east1-docker.pkg.dev/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_BACKEND_IMG}']
+   args: ['push', '${_EDUHUB_REPO_LOC}/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_BACKEND_IMG}']
  
  # Deploy container to Cloud Run
  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
    entrypoint: gcloud
    args: [
    'run', 'deploy', '${_EDUHUB_CLOUD_RUN_SERVICE}',
-   '--image', 'us-east1-docker.pkg.dev/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_BACKEND_IMG}',
+   '--image', '${_EDUHUB_REPO_LOC}/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_BACKEND_IMG}',
    '--region', 'us-east1',
    '--allow-unauthenticated']
 
@@ -30,4 +30,5 @@
     _EDUHUB_BACKEND_IMG: eduhub-sand-backend-image:sandpit
     _EDUHUB_BACKEND_DOCKERFILE_PATH: src
     _EDUHUB_CLOUD_RUN_SERVICE: eduhub-sdms-backend
+    _EDUHUB_REPO_LOC: us-south1-docker.pkg.dev
 
