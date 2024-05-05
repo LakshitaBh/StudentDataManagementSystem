@@ -13,7 +13,7 @@ RUN npm install cors
 # Copy the rest of the application
 COPY . .
 
-RUN chmod +x ./src/start.sh
+RUN chmod +x start.sh
 
 # Expose the port the app runs on
 EXPOSE 3000
