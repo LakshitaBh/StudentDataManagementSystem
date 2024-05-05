@@ -11,7 +11,7 @@
     '-t', '${_EDUHUB_REPO_LOC}/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_BACKEND_IMG}', 
     '-f', 'Dockerfile',
     '.']
-    dir: ${_EDUHUB_BACKEND_PATH}
+   dir: ${_EDUHUB_BACKEND_PATH}
 
  # Push the container image to Artifact Registry
  - name: 'gcr.io/cloud-builders/docker'
