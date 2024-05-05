@@ -11,7 +11,7 @@ RUN npm install
 RUN npm install cors
 
 # Copy the rest of the application
-COPY client/ .
+COPY . .
 
 RUN chmod +x ./src/start.sh
 
