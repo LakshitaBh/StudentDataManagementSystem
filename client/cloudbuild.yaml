@@ -31,3 +31,5 @@
     _EDUHUB_CLOUD_RUN_SERVICE: eduhub-sdms-frontend
     _EDUHUB_REPO_LOC: us-south1-docker.pkg.dev
 
+ options:
+  logging: CLOUD_LOGGING_ONLY
