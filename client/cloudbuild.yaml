@@ -22,14 +22,14 @@
    args: [
    'run', 'deploy', '${_EDUHUB_CLOUD_RUN_SERVICE}',
    '--image', '${_EDUHUB_REPO_LOC}/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_FRONTEND_IMG}',
-   '--region', 'us-south1',
+   '--region', 'us-central1',
    '--allow-unauthenticated']
 
  substitutions:
     _EDUHUB_REPO: eduhub-sdms-repo
     _EDUHUB_FRONTEND_IMG: eduhub-sand-frontend-image:sandpit
     _EDUHUB_CLOUD_RUN_SERVICE: eduhub-sdms-frontend
-    _EDUHUB_REPO_LOC: us-south1-docker.pkg.dev
+    _EDUHUB_REPO_LOC: us-central1-docker.pkg.dev
 
  options:
   logging: CLOUD_LOGGING_ONLY

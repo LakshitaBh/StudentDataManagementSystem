@@ -9,7 +9,7 @@
    args: [
     'build', 
     '-t', '${_EDUHUB_REPO_LOC}/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_BACKEND_IMG}', 
-    '-f', './${_EDUHUB_BACKEND_DOCKERFILE_PATH}/dockerfile',
+    '-f', 'dockerfile',
     './${_EDUHUB_BACKEND_PATH}']
 
  # Push the container image to Artifact Registry
@@ -22,15 +22,14 @@
    args: [
    'run', 'deploy', '${_EDUHUB_CLOUD_RUN_SERVICE}',
    '--image', '${_EDUHUB_REPO_LOC}/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_BACKEND_IMG}',
-   '--region', 'us-south1',
+   '--region', 'us-central1',
    '--allow-unauthenticated']
 
  substitutions:
     _EDUHUB_REPO: eduhub-sdms-repo
     _EDUHUB_BACKEND_IMG: eduhub-sand-backend-image:sandpit
-    _EDUHUB_BACKEND_DOCKERFILE_PATH: src
     _EDUHUB_CLOUD_RUN_SERVICE: eduhub-sdms-backend
-    _EDUHUB_REPO_LOC: us-south1-docker.pkg.dev
+    _EDUHUB_REPO_LOC: us-central1-docker.pkg.dev
 
  options:
   logging: CLOUD_LOGGING_ONLY
