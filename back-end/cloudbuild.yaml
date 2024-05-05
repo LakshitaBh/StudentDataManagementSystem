@@ -22,7 +22,7 @@
    args: [
    'run', 'deploy', '${_EDUHUB_CLOUD_RUN_SERVICE}',
    '--image', '${_EDUHUB_REPO_LOC}/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_BACKEND_IMG}',
-   '--region', 'us-east1',
+   '--region', 'us-south1',
    '--allow-unauthenticated']
 
  substitutions:
