@@ -9,7 +9,7 @@
    args: [
     'build', 
     '-t', '${_EDUHUB_REPO_LOC}/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_FRONTEND_IMG}', 
-    '-f', '${_EDUHUB_FRONTEND_PATH}/Dockerfile',
+    '-f', 'Dockerfile',
     '.']
    dir: ${_EDUHUB_FRONTEND_PATH}
 
@@ -24,7 +24,7 @@
    'run', 'deploy', '${_EDUHUB_CLOUD_RUN_SERVICE}',
    '--image', '${_EDUHUB_REPO_LOC}/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_FRONTEND_IMG}',
    '--region', '${_PROJ_DEFAULT_REGION}',
-   '--port', '3000',
+   '--port', '${_EDUHUB_FRONTEND_PORT}',
    '--allow-unauthenticated']
 
  substitutions:
@@ -34,6 +34,7 @@
     _EDUHUB_REPO_LOC: ${_PROJ_DEFAULT_REGION}-docker.pkg.dev
     _EDUHUB_FRONTEND_PATH: client
     _PROJ_DEFAULT_REGION: us-central1
+    _EDUHUB_FRONTEND_PORT: 3000
 
  options:
   logging: CLOUD_LOGGING_ONLY

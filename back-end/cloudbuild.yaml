@@ -24,7 +24,7 @@
    'run', 'deploy', '${_EDUHUB_CLOUD_RUN_SERVICE}',
    '--image', '${_EDUHUB_REPO_LOC}/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_BACKEND_IMG}',
    '--region', '${_PROJ_DEFAULT_REGION}',
-   '--port', '50051',
+   '--port', '${_EDUHUB_BACKEND_PORT}',
    '--allow-unauthenticated']
 
  substitutions:
@@ -34,6 +34,7 @@
     _EDUHUB_REPO_LOC: ${_PROJ_DEFAULT_REGION}-docker.pkg.dev
     _EDUHUB_BACKEND_PATH: back-end
     _PROJ_DEFAULT_REGION: us-central1
+    _EDUHUB_BACKEND_PORT: 50051
 
  options:
   logging: CLOUD_LOGGING_ONLY
