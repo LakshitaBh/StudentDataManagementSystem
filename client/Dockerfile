@@ -27,4 +27,4 @@ RUN chmod +x startup.sh && \
 EXPOSE 3000
 
 # Command to run the application
-CMD ["start.sh"]
+CMD ["startup.sh"]
