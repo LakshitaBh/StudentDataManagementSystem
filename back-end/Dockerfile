@@ -25,4 +25,4 @@ RUN chmod +x startup.sh && \
 
 EXPOSE 50051
 
-CMD [ "/usr/local/bin/startup.sh && python ./src/server.py" ]
+CMD ["/bin/bash", "-c", "/usr/local/bin/startup.sh && python ./src/server.py"]
