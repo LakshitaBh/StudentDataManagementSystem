@@ -6,7 +6,9 @@ cd /usr/src/app
 # Copy .env file from Cloud Storage to the current directory
 gsutil cp gs://eduhub-sand-bkt/.env .
 
+echo "Starting backend server..."
+
 # Run your Python script
 python ./src/server.py
 
-logger "Backend server started successfully."
+echo "Started backend server..."
