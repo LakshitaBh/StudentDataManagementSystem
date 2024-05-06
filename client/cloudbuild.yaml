@@ -30,7 +30,7 @@
  substitutions:
     _EDUHUB_REPO: eduhub-sdms-repo
     _EDUHUB_FRONTEND_IMG: eduhub-frontend-image:sandpit
-    _EDUHUB_CLOUD_RUN_SERVICE: eduhub-sdms-frontend
+    _EDUHUB_CLOUD_RUN_SERVICE: eduhub-sdms-sandpit
     _EDUHUB_REPO_LOC: ${_PROJ_DEFAULT_REGION}-docker.pkg.dev
     _EDUHUB_FRONTEND_PATH: client
     _PROJ_DEFAULT_REGION: us-central1
