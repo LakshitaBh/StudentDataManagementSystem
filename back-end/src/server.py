@@ -8,6 +8,7 @@ import requests
 from sdms_server.api.api import *
 from sdms_server.validation.validation import *
 from dotenv import load_dotenv
+import sys
 
 # Helper method to convert a dictionary to a Name message
 def dict_to_name(name_dict):
@@ -128,8 +129,9 @@ def serve():
     backend_pb2_grpc.add_SDMS_BackendServicer_to_server(Greeter(), server)
     server.add_insecure_port("[::]:" + port)
     server.start()
-    print(f'Public IP: {get_public_ip()}')
-    print("Server started, listening on " + port)
+    logging.info(f'Public IP: {get_public_ip()}')
+    logging.info("Server started, listening on " + port)
+    sys.stdout.flush()
     server.wait_for_termination()
 
 
