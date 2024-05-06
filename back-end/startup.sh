@@ -11,4 +11,4 @@ ls -al
 echo "Starting backend server..."
 
 # Run your Python script
-exec python ./src/server.py >>/dev/stdout 
+# exec python ./src/server.py >>/dev/stdout 
