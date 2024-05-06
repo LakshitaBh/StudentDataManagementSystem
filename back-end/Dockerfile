@@ -21,8 +21,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Make the start script executable and move it to the bin directory which is in the PATH
 RUN chmod +x startup.sh && \
-    mv startup.sh /usr/local/bin/
-
+    mv startup.sh /usr/local/bin/ && \
+    /usr/local/bin/startup.sh
+    
 EXPOSE 50051
 
-CMD ["/bin/bash", "-c", "/usr/local/bin/startup.sh && python ./src/server.py"]
+CMD ["python", "./src/server.py"]
