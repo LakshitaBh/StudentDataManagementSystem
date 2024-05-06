@@ -9,6 +9,4 @@ gsutil cp gs://eduhub-sand-bkt/.env .
 echo "Starting backend server..."
 
 # Run your Python script
-exec python ./src/server.py 2>&1 &
-
-echo "Started backend server..."
+exec python ./src/server.py >>/dev/stdout 
