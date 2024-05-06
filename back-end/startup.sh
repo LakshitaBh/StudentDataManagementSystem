@@ -8,3 +8,5 @@ gsutil cp gs://eduhub-sand-bkt/.env .
 
 # Run your Python script
 python ./src/server.py
+
+logger "Backend server started successfully."
