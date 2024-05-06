@@ -12,8 +12,8 @@ RUN ls -la
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Make the start script executable
-RUN chmod +x start.sh
+RUN chmod +x startup.sh
 
 EXPOSE 50051
 
-CMD [ "start.sh" ]
+CMD [ "startup.sh" ]
