@@ -1,5 +1,7 @@
 FROM python:3.11
 
+ENV PYTHONUNBUFFERED True
+
 # Install the Cloud SDK
 RUN apt-get update && \
     apt-get install -y apt-transport-https ca-certificates gnupg && \
@@ -23,7 +25,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN chmod +x startup.sh && \
     mv startup.sh /usr/local/bin/ && \
     /usr/local/bin/startup.sh
-    
+
 EXPOSE 50051
 
 CMD ["python", "./src/server.py"]
