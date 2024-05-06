@@ -25,7 +25,7 @@
    '--image', '${_EDUHUB_REPO_LOC}/$PROJECT_ID/${_EDUHUB_REPO}/${_EDUHUB_BACKEND_IMG}',
    '--region', '${_PROJ_DEFAULT_REGION}',
    '--port', '50051',
-   '--memory', '2GiB',
+   '--memory', '2Gi',
    '--allow-unauthenticated']
 
  substitutions:
