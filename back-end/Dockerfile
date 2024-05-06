@@ -11,8 +11,9 @@ RUN ls -la
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Make the start script executable
-RUN chmod +x startup.sh
+# Make the start script executable and move it to the bin directory which is in the PATH
+RUN chmod +x startup.sh && \
+    mv startup.sh /usr/local/bin/
 
 EXPOSE 50051
 
