@@ -1,6 +1,3 @@
-FROM google/cloud-sdk:latest
-RUN gsutil cp gs://eduhub-sand-bkt/.env .
-
 FROM python:3.11
 
 # Set the working directory in the container
@@ -14,4 +11,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 50051
 
-CMD [ "python", "./src/server.py" ]
+CMD [ "start.sh" ]
